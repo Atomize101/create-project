@@ -1,12 +1,19 @@
 {
-  "name": "create-project",
+  "name": "@atomize101/create-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A CLI to bootstrap my projects",
+  "main": "src/index.js",
+  "bin": {
+    "@atomize101/create-project": "bin/create-project",
+    "create-project": "bin/create-project"
+  }, 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
 }
