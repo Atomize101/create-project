@@ -18,13 +18,11 @@ export async function createProject(options) {
 		...options,
 		targetDirectory: options.targetDirectory || process.cwd(),
 	};
-	const currentFileUrl = import.meta.url;
-	const templateDir = path.resolve(
-		new URL(currentFileUrl).pathname,
-		'../../templates',
-		options.template.toLowerCase()
-	);
+	let currentFileUrl = import.meta.url;
+	currentFileUrl = currentFileUrl.replace('file:///', '');
+	const templateDir = path.resolve(currentFileUrl, '../../templates', options.template.toLowerCase());
 	options.templateDirectory = templateDir;
+
 	try {
 		await access(templateDir, fs.constants.R_OK);
 	} catch (err) {
