@@ -1,15 +1,17 @@
 {
-	"name": "javascript-template",
+	"name": "typescript-template",
 	"version": "1.0.0",
 	"description": "",
-	"main": "src/index.js",
+	"main": "dist/index.js",
 	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
 	"author": "Chris Patrick",
 	"license": "ISC",
 	"dependencies": {
-		"esm": "^3.2.25"
+		"typescript": "^3.3.3333"
 	}
 }
